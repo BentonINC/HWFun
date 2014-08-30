@@ -62,7 +62,7 @@ int main (void)
 	if (at25dfx_chip_check_presence(FLASH_ADDR)==STATUS_OK); {
 		port_pin_set_output_level(LED_0_PIN, LED_0_ACTIVE);
 		delay_ms(5000);
-		uint8_t string[] = "Sweet! We can see Flash Memory!\r\n";
+		uint8_t string[] = "We see Flash Memory!\r\n";
 		usart_write_buffer_wait(&usart_instance, string, sizeof(string));
 		port_pin_set_output_level(LED_0_PIN, !LED_0_ACTIVE);
 	}
