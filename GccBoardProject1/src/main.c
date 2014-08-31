@@ -74,11 +74,10 @@ int main (void)
 		// Is button pressed?
 		if (port_pin_get_input_level(BUTTON_0_PIN) == BUTTON_0_ACTIVE) {
 			// Yes, so turn on LED.
-				port_pin_set_output_level(LED_0_PIN, LED_0_ACTIVE);
-				port_pin_set_output_level(LED_0_PIN, !LED_0_ACTIVE);
-				
 				uint8_t string[] = "Button Pressed!\r\n";
 				usart_write_buffer_wait(&usart_instance, string, sizeof(string));
+				port_pin_set_output_level(LED_0_PIN, LED_0_ACTIVE);
+				port_pin_set_output_level(LED_0_PIN, !LED_0_ACTIVE);
 		} else {
 			// No, so turn LED off.
 			port_pin_set_output_level(LED_0_PIN, !LED_0_ACTIVE);

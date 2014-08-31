@@ -3,37 +3,37 @@ GccBoardProject1.elf:     file format elf32-littlearm
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .text         000022a4  00000000  00000000  00008000  2**3
+  0 .text         00002298  00000000  00000000  00008000  2**3
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  1 .ARM.exidx    00000008  000022a4  000022a4  0000a2a4  2**2
+  1 .ARM.exidx    00000008  00002298  00002298  0000a298  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  2 .relocate     00000440  20000000  000022ac  00010000  2**3
+  2 .relocate     00000440  20000000  000022a0  00010000  2**3
                   CONTENTS, ALLOC, LOAD, CODE
-  3 .bss          000000a8  20000440  000026ec  00010440  2**2
+  3 .bss          000000a8  20000440  000026e0  00010440  2**2
                   ALLOC
-  4 .stack        00002000  200004e8  00002794  00010440  2**0
+  4 .stack        00002000  200004e8  00002788  00010440  2**0
                   ALLOC
   5 .ARM.attributes 00000028  00000000  00000000  00010440  2**0
                   CONTENTS, READONLY
   6 .comment      00000071  00000000  00000000  00010468  2**0
                   CONTENTS, READONLY
-  7 .debug_info   000233d6  00000000  00000000  000104d9  2**0
+  7 .debug_info   000233d5  00000000  00000000  000104d9  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_abbrev 00003214  00000000  00000000  000338af  2**0
+  8 .debug_abbrev 00003214  00000000  00000000  000338ae  2**0
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_loc    0000b622  00000000  00000000  00036ac3  2**0
+  9 .debug_loc    0000b621  00000000  00000000  00036ac2  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_aranges 00000530  00000000  00000000  000420e5  2**0
+ 10 .debug_aranges 00000530  00000000  00000000  000420e3  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_ranges 00001448  00000000  00000000  00042615  2**0
+ 11 .debug_ranges 00001448  00000000  00000000  00042613  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_macro  00018989  00000000  00000000  00043a5d  2**0
+ 12 .debug_macro  00018989  00000000  00000000  00043a5b  2**0
                   CONTENTS, READONLY, DEBUGGING
- 13 .debug_line   0000bc05  00000000  00000000  0005c3e6  2**0
+ 13 .debug_line   0000bbfa  00000000  00000000  0005c3e4  2**0
                   CONTENTS, READONLY, DEBUGGING
- 14 .debug_str    00084dfc  00000000  00000000  00067feb  2**0
+ 14 .debug_str    00084dfc  00000000  00000000  00067fde  2**0
                   CONTENTS, READONLY, DEBUGGING
- 15 .debug_frame  00000c9c  00000000  00000000  000ecde8  2**2
+ 15 .debug_frame  00000c9c  00000000  00000000  000ecddc  2**2
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -92,8 +92,8 @@ Disassembly of section .text:
       c6:	4798      	blx	r3
       c8:	e7f9      	b.n	be <deregister_tm_clones+0xe>
       ca:	46c0      	nop			; (mov r8, r8)
-      cc:	000022ac 	.word	0x000022ac
-      d0:	000022ac 	.word	0x000022ac
+      cc:	000022a0 	.word	0x000022a0
+      d0:	000022a0 	.word	0x000022a0
       d4:	00000000 	.word	0x00000000
 
 000000d8 <register_tm_clones>:
@@ -113,8 +113,8 @@ Disassembly of section .text:
       f2:	4790      	blx	r2
       f4:	e7f9      	b.n	ea <register_tm_clones+0x12>
       f6:	46c0      	nop			; (mov r8, r8)
-      f8:	000022ac 	.word	0x000022ac
-      fc:	000022ac 	.word	0x000022ac
+      f8:	000022a0 	.word	0x000022a0
+      fc:	000022a0 	.word	0x000022a0
      100:	00000000 	.word	0x00000000
 
 00000104 <__do_global_dtors_aux>:
@@ -135,7 +135,7 @@ Disassembly of section .text:
      122:	bd10      	pop	{r4, pc}
      124:	20000440 	.word	0x20000440
      128:	00000000 	.word	0x00000000
-     12c:	000022ac 	.word	0x000022ac
+     12c:	000022a0 	.word	0x000022a0
 
 00000130 <frame_dummy>:
      130:	b508      	push	{r3, lr}
@@ -158,9 +158,9 @@ Disassembly of section .text:
      154:	bd08      	pop	{r3, pc}
      156:	46c0      	nop			; (mov r8, r8)
      158:	00000000 	.word	0x00000000
-     15c:	000022ac 	.word	0x000022ac
+     15c:	000022a0 	.word	0x000022a0
      160:	20000444 	.word	0x20000444
-     164:	000022ac 	.word	0x000022ac
+     164:	000022a0 	.word	0x000022a0
      168:	00000000 	.word	0x00000000
 
 0000016c <at25dfx_chip_check_presence>:
@@ -5909,7 +5909,7 @@ void Reset_Handler(void)
     158c:	4798      	blx	r3
     158e:	e7fe      	b.n	158e <Reset_Handler+0x66>
     1590:	20000000 	.word	0x20000000
-    1594:	000022ac 	.word	0x000022ac
+    1594:	000022a0 	.word	0x000022a0
     1598:	20000440 	.word	0x20000440
     159c:	200004e8 	.word	0x200004e8
     15a0:	20000440 	.word	0x20000440
@@ -6115,7 +6115,7 @@ int main (void)
     1678:	b5f0      	push	{r4, r5, r6, r7, lr}
     167a:	4647      	mov	r7, r8
     167c:	b480      	push	{r7}
-    167e:	b08a      	sub	sp, #40	; 0x28
+    167e:	b086      	sub	sp, #24
 	system_init();
     1680:	4b2b      	ldr	r3, [pc, #172]	; (1730 <main+0xb8>)
     1682:	4798      	blx	r3
@@ -6153,21 +6153,21 @@ int main (void)
     16b4:	47b0      	blx	r6
     16b6:	4b25      	ldr	r3, [pc, #148]	; (174c <main+0xd4>)
     16b8:	4798      	blx	r3
-		uint8_t string[] = "Sweet! We can see Flash Memory!\r\n";
-    16ba:	a901      	add	r1, sp, #4
+		uint8_t string[] = "We see Flash Memory!\r\n";
+    16ba:	4669      	mov	r1, sp
     16bc:	4a24      	ldr	r2, [pc, #144]	; (1750 <main+0xd8>)
-    16be:	1c0b      	adds	r3, r1, #0
+    16be:	466b      	mov	r3, sp
     16c0:	cac1      	ldmia	r2!, {r0, r6, r7}
     16c2:	c3c1      	stmia	r3!, {r0, r6, r7}
-    16c4:	cac1      	ldmia	r2!, {r0, r6, r7}
-    16c6:	c3c1      	stmia	r3!, {r0, r6, r7}
-    16c8:	ca41      	ldmia	r2!, {r0, r6}
-    16ca:	c341      	stmia	r3!, {r0, r6}
-    16cc:	8812      	ldrh	r2, [r2, #0]
-    16ce:	801a      	strh	r2, [r3, #0]
+    16c4:	ca41      	ldmia	r2!, {r0, r6}
+    16c6:	c341      	stmia	r3!, {r0, r6}
+    16c8:	8810      	ldrh	r0, [r2, #0]
+    16ca:	8018      	strh	r0, [r3, #0]
+    16cc:	7892      	ldrb	r2, [r2, #2]
+    16ce:	709a      	strb	r2, [r3, #2]
 		usart_write_buffer_wait(&usart_instance, string, sizeof(string));
     16d0:	4820      	ldr	r0, [pc, #128]	; (1754 <main+0xdc>)
-    16d2:	2222      	movs	r2, #34	; 0x22
+    16d2:	2217      	movs	r2, #23
     16d4:	4b20      	ldr	r3, [pc, #128]	; (1758 <main+0xe0>)
     16d6:	4798      	blx	r3
 	PortGroup *const port_base = port_get_group_from_gpio_pin(gpio_pin);
@@ -6184,11 +6184,11 @@ int main (void)
 
 	return (port_base->IN.reg & pin_mask);
     16da:	4e20      	ldr	r6, [pc, #128]	; (175c <main+0xe4>)
+	// This skeleton code simply sets the LED to the state of the button.
+	while (1) {
+		// Is button pressed?
 		if (port_pin_get_input_level(BUTTON_0_PIN) == BUTTON_0_ACTIVE) {
 			// Yes, so turn on LED.
-				port_pin_set_output_level(LED_0_PIN, LED_0_ACTIVE);
-				port_pin_set_output_level(LED_0_PIN, !LED_0_ACTIVE);
-				
 				uint8_t string[] = "Button Pressed!\r\n";
     16dc:	4f20      	ldr	r7, [pc, #128]	; (1760 <main+0xe8>)
     16de:	46b8      	mov	r8, r7
@@ -6201,41 +6201,38 @@ int main (void)
 		if (port_pin_get_input_level(BUTTON_0_PIN) == BUTTON_0_ACTIVE) {
     16e2:	0418      	lsls	r0, r3, #16
     16e4:	d411      	bmi.n	170a <main+0x92>
+			// Yes, so turn on LED.
+				uint8_t string[] = "Button Pressed!\r\n";
+    16e6:	4669      	mov	r1, sp
+    16e8:	466b      	mov	r3, sp
+    16ea:	4642      	mov	r2, r8
+    16ec:	caa1      	ldmia	r2!, {r0, r5, r7}
+    16ee:	c3a1      	stmia	r3!, {r0, r5, r7}
+    16f0:	6815      	ldr	r5, [r2, #0]
+    16f2:	601d      	str	r5, [r3, #0]
+    16f4:	8892      	ldrh	r2, [r2, #4]
+    16f6:	809a      	strh	r2, [r3, #4]
+				usart_write_buffer_wait(&usart_instance, string, sizeof(string));
+    16f8:	4816      	ldr	r0, [pc, #88]	; (1754 <main+0xdc>)
+    16fa:	2212      	movs	r2, #18
+    16fc:	4b16      	ldr	r3, [pc, #88]	; (1758 <main+0xe0>)
+    16fe:	4798      	blx	r3
 
 	/* Set the pin to high or low atomically based on the requested level */
 	if (level) {
 		port_base->OUTSET.reg = pin_mask;
 	} else {
 		port_base->OUTCLR.reg = pin_mask;
-    16e6:	2380      	movs	r3, #128	; 0x80
-    16e8:	05db      	lsls	r3, r3, #23
-    16ea:	6163      	str	r3, [r4, #20]
+    1700:	2380      	movs	r3, #128	; 0x80
+    1702:	05db      	lsls	r3, r3, #23
+    1704:	6163      	str	r3, [r4, #20]
 	PortGroup *const port_base = port_get_group_from_gpio_pin(gpio_pin);
 	uint32_t pin_mask  = (1UL << (gpio_pin % 32));
 
 	/* Set the pin to high or low atomically based on the requested level */
 	if (level) {
 		port_base->OUTSET.reg = pin_mask;
-    16ec:	61a3      	str	r3, [r4, #24]
-			// Yes, so turn on LED.
-				port_pin_set_output_level(LED_0_PIN, LED_0_ACTIVE);
-				port_pin_set_output_level(LED_0_PIN, !LED_0_ACTIVE);
-				
-				uint8_t string[] = "Button Pressed!\r\n";
-    16ee:	a901      	add	r1, sp, #4
-    16f0:	1c0b      	adds	r3, r1, #0
-    16f2:	4642      	mov	r2, r8
-    16f4:	caa1      	ldmia	r2!, {r0, r5, r7}
-    16f6:	c3a1      	stmia	r3!, {r0, r5, r7}
-    16f8:	6815      	ldr	r5, [r2, #0]
-    16fa:	601d      	str	r5, [r3, #0]
-    16fc:	8892      	ldrh	r2, [r2, #4]
-    16fe:	809a      	strh	r2, [r3, #4]
-				usart_write_buffer_wait(&usart_instance, string, sizeof(string));
-    1700:	4814      	ldr	r0, [pc, #80]	; (1754 <main+0xdc>)
-    1702:	2212      	movs	r2, #18
-    1704:	4b14      	ldr	r3, [pc, #80]	; (1758 <main+0xe0>)
-    1706:	4798      	blx	r3
+    1706:	61a3      	str	r3, [r4, #24]
     1708:	e7ea      	b.n	16e0 <main+0x68>
     170a:	2380      	movs	r3, #128	; 0x80
     170c:	05db      	lsls	r3, r3, #23
@@ -6262,7 +6259,7 @@ int main (void)
     1754:	200004b4 	.word	0x200004b4
     1758:	00000d75 	.word	0x00000d75
     175c:	41004400 	.word	0x41004400
-    1760:	00002264 	.word	0x00002264
+    1760:	00002258 	.word	0x00002258
     1764:	46c0      	nop			; (mov r8, r8)
     1766:	46c0      	nop			; (mov r8, r8)
 
@@ -7400,7 +7397,7 @@ int main (void)
     207a:	4798      	blx	r3
     207c:	3401      	adds	r4, #1
     207e:	e7f8      	b.n	2072 <__libc_init_array+0xe>
-    2080:	f000 f8fe 	bl	2280 <_init>
+    2080:	f000 f8f8 	bl	2274 <_init>
     2084:	4b08      	ldr	r3, [pc, #32]	; (20a8 <__libc_init_array+0x44>)
     2086:	4d09      	ldr	r5, [pc, #36]	; (20ac <__libc_init_array+0x48>)
     2088:	2400      	movs	r4, #0
@@ -7415,10 +7412,10 @@ int main (void)
     209a:	3401      	adds	r4, #1
     209c:	e7f8      	b.n	2090 <__libc_init_array+0x2c>
     209e:	bd70      	pop	{r4, r5, r6, pc}
-    20a0:	0000228c 	.word	0x0000228c
-    20a4:	0000228c 	.word	0x0000228c
-    20a8:	0000228c 	.word	0x0000228c
-    20ac:	00002294 	.word	0x00002294
+    20a0:	00002280 	.word	0x00002280
+    20a4:	00002280 	.word	0x00002280
+    20a8:	00002280 	.word	0x00002280
+    20ac:	00002288 	.word	0x00002288
 
 000020b0 <memcpy>:
     20b0:	b510      	push	{r4, lr}
@@ -7466,10 +7463,10 @@ int main (void)
     2100:	58eb      	ldr	r3, [r5, r3]
     2102:	4798      	blx	r3
     2104:	e7f8      	b.n	20f8 <__libc_fini_array+0xc>
-    2106:	f000 f8c5 	bl	2294 <_fini>
+    2106:	f000 f8bf 	bl	2288 <_fini>
     210a:	bd38      	pop	{r3, r4, r5, pc}
-    210c:	000022a0 	.word	0x000022a0
-    2110:	000022a4 	.word	0x000022a4
+    210c:	00002294 	.word	0x00002294
+    2110:	00002298 	.word	0x00002298
 
 00002114 <__register_exitproc>:
     2114:	b5f7      	push	{r0, r1, r2, r4, r5, r6, r7, lr}
@@ -7546,7 +7543,7 @@ int main (void)
     21a2:	2000      	movs	r0, #0
     21a4:	bdfe      	pop	{r1, r2, r3, r4, r5, r6, r7, pc}
     21a6:	46c0      	nop			; (mov r8, r8)
-    21a8:	00002278 	.word	0x00002278
+    21a8:	0000226c 	.word	0x0000226c
     21ac:	00000000 	.word	0x00000000
     21b0:	000001cc 	.word	0x000001cc
     21b4:	000001f4 	.word	0x000001f4
@@ -7584,48 +7581,45 @@ int main (void)
     2234:	000010b8 	.word	0x000010b8
     2238:	000010f4 	.word	0x000010f4
     223c:	00001128 	.word	0x00001128
-    2240:	65657753 	.word	0x65657753
-    2244:	57202174 	.word	0x57202174
-    2248:	61632065 	.word	0x61632065
-    224c:	6573206e 	.word	0x6573206e
-    2250:	6c462065 	.word	0x6c462065
-    2254:	20687361 	.word	0x20687361
-    2258:	6f6d654d 	.word	0x6f6d654d
-    225c:	0d217972 	.word	0x0d217972
-    2260:	0000000a 	.word	0x0000000a
-    2264:	74747542 	.word	0x74747542
-    2268:	50206e6f 	.word	0x50206e6f
-    226c:	73736572 	.word	0x73736572
-    2270:	0d216465 	.word	0x0d216465
-    2274:	0000000a 	.word	0x0000000a
+    2240:	73206557 	.word	0x73206557
+    2244:	46206565 	.word	0x46206565
+    2248:	6873616c 	.word	0x6873616c
+    224c:	6d654d20 	.word	0x6d654d20
+    2250:	2179726f 	.word	0x2179726f
+    2254:	00000a0d 	.word	0x00000a0d
+    2258:	74747542 	.word	0x74747542
+    225c:	50206e6f 	.word	0x50206e6f
+    2260:	73736572 	.word	0x73736572
+    2264:	0d216465 	.word	0x0d216465
+    2268:	0000000a 	.word	0x0000000a
 
-00002278 <_global_impure_ptr>:
-    2278:	20000018 00000043                       ... C...
+0000226c <_global_impure_ptr>:
+    226c:	20000018 00000043                       ... C...
 
-00002280 <_init>:
-    2280:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
-    2282:	46c0      	nop			; (mov r8, r8)
-    2284:	bcf8      	pop	{r3, r4, r5, r6, r7}
-    2286:	bc08      	pop	{r3}
-    2288:	469e      	mov	lr, r3
-    228a:	4770      	bx	lr
+00002274 <_init>:
+    2274:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
+    2276:	46c0      	nop			; (mov r8, r8)
+    2278:	bcf8      	pop	{r3, r4, r5, r6, r7}
+    227a:	bc08      	pop	{r3}
+    227c:	469e      	mov	lr, r3
+    227e:	4770      	bx	lr
 
-0000228c <__init_array_start>:
-    228c:	000020c5 	.word	0x000020c5
+00002280 <__init_array_start>:
+    2280:	000020c5 	.word	0x000020c5
 
-00002290 <__frame_dummy_init_array_entry>:
-    2290:	00000131                                1...
+00002284 <__frame_dummy_init_array_entry>:
+    2284:	00000131                                1...
 
-00002294 <_fini>:
-    2294:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
-    2296:	46c0      	nop			; (mov r8, r8)
-    2298:	bcf8      	pop	{r3, r4, r5, r6, r7}
-    229a:	bc08      	pop	{r3}
-    229c:	469e      	mov	lr, r3
-    229e:	4770      	bx	lr
+00002288 <_fini>:
+    2288:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
+    228a:	46c0      	nop			; (mov r8, r8)
+    228c:	bcf8      	pop	{r3, r4, r5, r6, r7}
+    228e:	bc08      	pop	{r3}
+    2290:	469e      	mov	lr, r3
+    2292:	4770      	bx	lr
 
-000022a0 <__fini_array_start>:
-    22a0:	00000105 	.word	0x00000105
+00002294 <__fini_array_start>:
+    2294:	00000105 	.word	0x00000105
 
 Disassembly of section .relocate:
 
@@ -7657,7 +7651,7 @@ void portable_delay_cycles(unsigned long n)
 20000018 <impure_data>:
 20000018:	0000 0000 0304 2000 036c 2000 03d4 2000     ....... l.. ... 
 	...
-2000004c:	227c 0000 0000 0000 0000 0000 0000 0000     |"..............
+2000004c:	2270 0000 0000 0000 0000 0000 0000 0000     p"..............
 	...
 200000c0:	0001 0000 0000 0000 330e abcd 1234 e66d     .........3..4.m.
 200000d0:	deec 0005 000b 0000 0000 0000 0000 0000     ................
