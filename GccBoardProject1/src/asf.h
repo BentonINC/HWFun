@@ -78,9 +78,11 @@
 #include <sercom.h>
 #include <sercom_interrupt.h>
 
-// From module: SERCOM SPI - Serial Peripheral Interface (Callback APIs)
+// From module: SERCOM SPI - Serial Peripheral Interface (Master Mode, Vectored I/O)
+#include <spi_master_vec.h>
+
+// From module: SERCOM SPI - Serial Peripheral Interface (Polled APIs)
 #include <spi.h>
-#include <spi_interrupt.h>
 
 // From module: SERCOM USART - Serial Communications (Callback APIs)
 #include <usart.h>
